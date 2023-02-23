@@ -134,4 +134,4 @@ To run `beast-hunter` tests, run the following command
 
 ### NOTE
 
-<b>Using the configuration we can add skills to any character and also introduce different modifiers for different stats of the character. <b>
+<b>Using the configuration we can add skills to any character, currently we have two modifiers for the skills mentioned in the test but we can easily extend the modifiers and add many more skills to beast hunter <b>
