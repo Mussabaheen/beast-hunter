@@ -1,0 +1,15 @@
+# Binaries for programs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.DS_Store
+# Test binary, built with `go test -c`
+*.test
+# Output of the go coverage tool
+*.out
+# ignoring build
+build/
+# ignoring .vscode debug file
+.vscode/
