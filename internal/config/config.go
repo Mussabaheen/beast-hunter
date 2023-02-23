@@ -35,19 +35,28 @@ type BeastConfig struct {
 	LuckMax     int `mapstructure:"BEAST_LUCK_MAX"`     // maximum Beast luck
 }
 
-// SkillConfig have configuration for the stat Modifier
-type SkillConfig struct {
-	StrengthModifier float64 `mapstructure:"SKILL_DAMAGE_MODIFIER"`   // strength modifier for the skill
-	StrengthChance   float64 `mapstructure:"SKILL_DAMAGE_CHANCE"`     // strength chance for the skill
-	DamageModifier   float64 `mapstructure:"SKILL_STRENGTH_MODIFIER"` // Damage modifier for the skill
-	DamageChance     float64 `mapstructure:"SKILL_STRENGTH_CHANCE"`   // Damage chance for the skill
+// HeroSkillConfig have configuration for the hero skill modifier
+type HeroSkillConfig struct {
+	Name                []string  `mapstructure:"HERO_SKILL_LIST"`
+	StrikeCountModifier []float64 `mapstructure:"HERO_STRIKE_COUNT_MODIFIER_LIST"` // strike count modifier for the skill
+	DamageModifier      []float64 `mapstructure:"HERO_DAMAGE_MODIFIER_LIST"`       // Damage modifier for the skill
+	SkillChance         []float64 `mapstructure:"HERO_SKILL_CHANCE_LIST"`          // Chance of skill happening
+}
+
+// BeastSkillConfig have configuration for the hero skill modifier
+type BeastSkillConfig struct {
+	Name                []string  `mapstructure:"BEAST_SKILL_LIST"`
+	StrikeCountModifier []float64 `mapstructure:"BEAST_STRIKE_COUNT_MODIFIER_LIST"` // strike count modifier for the skill
+	DamageModifier      []float64 `mapstructure:"BEAST_DAMAGE_MODIFIER_LIST"`       // Damage modifier for the skill
+	SkillChance         []float64 `mapstructure:"BEAST_SKILL_CHANCE_LIST"`          // Chance of skill happening
 }
 
 // Config have configuration for the application
 type Config struct {
-	HeroConfig  `mapstructure:",squash"`
-	BeastConfig `mapstructure:",squash"`
-	SkillConfig `mapstructure:",squash"`
+	HeroConfig       `mapstructure:",squash"`
+	BeastConfig      `mapstructure:",squash"`
+	HeroSkillConfig  `mapstructure:",squash"`
+	BeastSkillConfig `mapstructure:",squash"`
 }
 
 // Global contains the application configurations

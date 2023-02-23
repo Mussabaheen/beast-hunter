@@ -98,14 +98,14 @@ func TestFirstAttacker_BeastAttacker(t *testing.T) {
 		},
 		Skills: []Skill{
 			{
-				Name:             "Rapid Strike",
-				StrengthModifier: 2,
-				Chance:           100,
+				Name:                "Rapid Strike",
+				StrikeCountModifier: 2,
+				Chance:              100,
 			},
 			{
-				Name:             "Magic Shield",
-				StrengthModifier: 2,
-				Chance:           100,
+				Name:           "Magic Shield",
+				DamageModifier: 2,
+				Chance:         100,
 			},
 		},
 	}
@@ -199,9 +199,9 @@ func TestAttack_SkillRapidStrike(t *testing.T) {
 		},
 		Skills: []Skill{
 			{
-				Name:             "Rapid Strike",
-				StrengthModifier: 2,
-				Chance:           100,
+				Name:                "Rapid Strike",
+				StrikeCountModifier: 2,
+				Chance:              100,
 			},
 		},
 	}

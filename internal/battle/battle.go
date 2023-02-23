@@ -8,6 +8,7 @@ import (
 )
 
 var (
+	// ErrNoWinnerFound represents the case in which no character won
 	ErrNoWinnerFound = errors.New("no winner, both characters still stand the ground")
 )
 
@@ -48,9 +49,9 @@ func attack(attacker, defender *Character) {
 	strikeCount := 1
 	for _, skill := range attacker.Skills {
 		if skill.ShouldApply() {
-			if skill.StrengthModifier != 0.0 {
-				strikeCount = int(skill.StrengthModifier)
-				logrus.Info("Rapid Strike Activated by ", attacker.Name)
+			if skill.StrikeCountModifier != 0.0 {
+				strikeCount = int(skill.StrikeCountModifier)
+				logrus.Info(skill.Name, " Activated by ", attacker.Name)
 			}
 		}
 	}
